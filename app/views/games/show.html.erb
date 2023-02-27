@@ -1,0 +1,30 @@
+<h1>@game.name</h1>
+<div class="game-grid">
+  <% @garden.games.each do |game| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= game.picture %>)">
+      <%= game.name %>
+      <%= link_to game_path(game), data: {turbo_method: :delete} do %>
+        <i class="fa-solid fa-trash"></i>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<div data-controller="form">
+  <button data-action="click->form#display">Add a game</button>
+  <div class="d-none" data-form-target="gameForm">
+    <%= simple_form_for [@user, @game] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :picture %>
+      <%= f.input :platform %>
+      <%= f.input :platform %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+
+<div>
+  <%= link_to "Edit this game", edit_game_path(@game) %> |
+  <%= link_to "Back to games", games_path %>
+  <%= button_to "Destroy this game", @game, method: :delete %>
+</div>
