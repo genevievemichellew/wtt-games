@@ -11,7 +11,7 @@ class GamesController < ApplicationController
 
   # Upload a new game
   def new
-    @games = Game.new
+    @game = Game.new
   end
 
   # Save uploaded game
