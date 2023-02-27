@@ -8,25 +8,34 @@
       <a href="" class="btn">Edit profile</a>
     </div>
   </div>
+
   <div class="games">
     <div class="grid">
-      <%# <% @user.games.each do |game| %>
-        <div class="card">
-          <%= link_to game_path do %>
-            <img src="https://images4.alphacoders.com/952/thumbbig-952572.webp" class="" alt="game">
-          <% end %>
-        </div>
-      <%# <% end %>
+      <% if @user.games %>
+        <% @user.games.each do |game| %>
+          <div class="card">
+            <%= link_to game_path(game) do %>
+              <img src="https://images4.alphacoders.com/952/thumbbig-952572.webp" class="" alt="game">
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <p>No games</p>
+      <% end %>
     </div>
+
     <div class="grid">
-      <%# <% @user.games.each do |game| %>
-        <div class="card">
-          <%= link_to game_path do %>
-            <img src="https://images4.alphacoders.com/952/thumbbig-952572.webp" class="" alt="game">
-          <% end %>
-        </div>
-      <%# <% end %>
+      <% if @user.games %>
+        <% @user.games.each do |game| %>
+          <div class="card">
+            <%= link_to game_path(game) do %>
+              <img src="https://images4.alphacoders.com/952/thumbbig-952572.webp" class="" alt="game">
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <p>No games</p>
+      <% end %>
     </div>
   </div>
-
 </div>

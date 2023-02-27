@@ -1,0 +1,12 @@
+<h1>Games</h1>
+
+<div id="games">
+  <% @games.each do |game| %>
+    <h3><%= game.name %></h3>
+    <p>
+      <%= link_to "Show this game", game %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New game", new_game_path %>
