@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
+
 puts 'Cleaning Database'
 Game.destroy_all
 User.destroy_all
@@ -31,75 +33,107 @@ jon = User.create(
   last_name: 'Snow'
 )
 
+puts 'Users created.'
 puts "Creating 10 games..."
-Game.create(
-  name: 'The Legend Of Zelda Ocarina Of Time',
+
+file = URI.open('https://assets-prd.ignimgs.com/2021/12/07/zeldaoot-ignart-1638901927766.jpg')
+game = Game.new(
+  name: 'The Legend Of Zelda: Ocarina Of Time',
   platform: 'Nintendo 64',
-  picture: 'https://assets-prd.ignimgs.com/2021/12/07/zeldaoot-ignart-1638901927766.jpg',
   price: 5,
   user_id: ana.id
 )
-Game.create(
+game.picture.attach(io: file, filename: 'zelda_ocarina.png', content_type: 'image/png')
+game.save
+
+file = URI.open('https://assets-prd.ignimgs.com/2021/12/17/tony-hawk-prp-skater-2-1639763193495.jpg')
+game = Game.new(
   name: "Tony Hawk's Pro Skater 2",
   platform: 'Playstation',
-  picture: 'https://assets-prd.ignimgs.com/2021/12/17/tony-hawk-prp-skater-2-1639763193495.jpg',
   price: 5,
   user_id: ana.id
 )
-Game.create(
-  name: "Grand Theft Auto IV",
+game.picture.attach(io: file, filename: 'thps2.png', content_type: 'image/png')
+game.save
+
+file = URI.open('https://assets-prd.ignimgs.com/2022/01/07/gta-4-button-char-v2-1641587906428.jpg')
+game = Game.new(
+  name: 'Grand Theft Auto IV',
   platform: 'Playstation 3',
-  picture: 'https://assets-prd.ignimgs.com/2022/01/07/gta-4-button-char-v2-1641587906428.jpg',
   price: 4,
   user_id: ana.id
 )
-Game.create(
-  name: "Soulcalibur",
+game.picture.attach(io: file, filename: 'gta_iv.png', content_type: 'image/png')
+game.save
+
+file = URI.open('https://assets-prd.ignimgs.com/2021/12/14/soulcalibur-1639521545469.jpg')
+game = Game.new(
+  name: 'Soulcalibur',
   platform: 'Dreamcast',
-  picture: 'https://assets-prd.ignimgs.com/2021/12/14/soulcalibur-1639521545469.jpg',
   price: 4,
   user_id: bob.id
 )
-Game.create(
-  name: "Super Mario Galaxy",
+game.picture.attach(io: file, filename: 'soulcalibur.png', content_type: 'image/png')
+game.save
+
+file = URI.open('https://assets-prd.ignimgs.com/2020/09/04/super-mario-galaxy-1-button-1599258841533.jpg')
+game = Game.new(
+  name: 'Super Mario Galaxy',
   platform: 'Wii',
-  picture: 'https://assets-prd.ignimgs.com/2020/09/04/super-mario-galaxy-1-button-1599258841533.jpg',
   price: 5,
   user_id: bob.id
 )
-Game.create(
-  name: "Red Dead Redemption 2",
+game.picture.attach(io: file, filename: 'super_mario_galaxy.png', content_type: 'image/png')
+game.save
+
+file = URI.open('https://assets1.ignimgs.com/2016/10/18/red-dead-redemption-2-buttonjpg-f9ad35.jpg')
+game = Game.new(
+  name: 'Red Dead Redemption 2',
   platform: 'Xbox One',
-  picture: 'https://assets1.ignimgs.com/2016/10/18/red-dead-redemption-2-buttonjpg-f9ad35.jpg',
   price: 5,
   user_id: bob.id
 )
-Game.create(
-  name: "Perfect Dark",
+game.picture.attach(io: file, filename: 'read_dead_redemption.png', content_type: 'image/png')
+game.save
+
+file = URI.open('https://assets-prd.ignimgs.com/2020/09/04/perfect-dark-64-button-orig-1599255765856.jpg')
+game = Game.new(
+  name: 'Perfect Dark',
   platform: 'Nintendo 64',
-  picture: 'https://assets-prd.ignimgs.com/2020/09/04/perfect-dark-64-button-orig-1599255765856.jpg',
   price: 3,
   user_id: jon.id
 )
-Game.create(
-  name: "Super Mario Bros",
+game.picture.attach(io: file, filename: 'perfect_dark.png', content_type: 'image/png')
+game.save
+
+file = URI.open('https://assets-prd.ignimgs.com/2022/01/08/smb-nesart-1641603921866.jpg')
+game = Game.new(
+  name: 'Super Mario Bros',
   platform: 'Nintendo',
-  picture: 'https://assets-prd.ignimgs.com/2022/01/08/smb-nesart-1641603921866.jpg',
   price: 3,
   user_id: jon.id
 )
-Game.create(
-  name: "The Last Of Us",
+game.picture.attach(io: file, filename: 'super_mario_bros.png', content_type: 'image/png')
+game.save
+
+file = URI.open('https://assets-prd.ignimgs.com/2021/12/07/tlou-1638842419547.jpg')
+game = Game.new(
+  name: 'The Last Of Us',
   platform: 'Playstation',
-  picture: 'https://assets-prd.ignimgs.com/2021/12/07/tlou-1638842419547.jpg',
   price: 5,
   user_id: jon.id
 )
-Game.create(
-  name: "Mega Man",
+game.picture.attach(io: file, filename: 'the_last_of_us.png', content_type: 'image/png')
+game.save
+
+file = URI.open('https://assets-prd.ignimgs.com/2022/04/05/megamangg-1649185884153.jpg')
+game = Game.new(
+  name: 'Mega Man',
   platform: 'Game Gear',
-  picture: 'https://assets-prd.ignimgs.com/2022/04/05/megamangg-1649185884153.jpg',
   price: 3,
   user_id: jon.id
 )
+game.picture.attach(io: file, filename: 'mega_man.png', content_type: 'image/png')
+game.save
+
 puts "10 games created!"
