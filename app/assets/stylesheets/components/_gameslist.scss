@@ -2,14 +2,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 15px;
+  width: fit-content;
 }
 
 .gameslist-game {
   display: flex;
   flex-flow: column;
   padding: 10px;
-  background-color: #15213F;
+  background-color: #17122F;
+  opacity: 0.75;
+  transition: 0.5s;
   border-radius: 5px;
+  p {
+    margin: 16px 0;
+  }
+}
+.gameslist-game:hover {
+  opacity: 1;
 }
 .game-img {
   margin: 0;
@@ -18,25 +27,35 @@
   img {
     object-fit: cover;
     border-radius: 5px;
+    border: 1px solid #E7E7E7;
   }
 }
 .game-bottom-part {
   display: flex;
   justify-content: space-between;
+  font-family: "Bruce";
+  padding: 5px;
+  height: 50px;
+  align-items: bottom;
+  h4 {
+    font-size: 16px;
+  }
   .gradient-btn {
     text-decoration: none;
     width: 50%;
-    display: block;
-    padding: 5px;
+    font-family: "Bruce";
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 5px;
     text-transform: uppercase;
-    transition: 0.5s, background-position;
+    transition: 0.5s;
     background-size: 100% auto;
     color: #E7E7E7;
     border-radius: 5px;
+    border-top-left-radius:15px;
     background-image: linear-gradient(to right, #6E31DD 0%, #f647ff 70%);
-  }
-  .graident-btn:hover {
-    background-position: right center;
   }
 }
