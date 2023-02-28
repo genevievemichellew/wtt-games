@@ -1,12 +1,45 @@
-.navbar-lewagon {
+header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #2C3E50;
   justify-content: space-between;
-  background: white;
+  height: 100px;
+  padding: 50px 150px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.logo{
+  color: #FFF;
+  font-weight: 900;
+  text-decoration: none;
+  font-family: 'Bruce';
+}
+.nav {
+  display: block;
+  width: 500px;
+  margin: 0;
+}
+nav ul{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin-bottom: 0;
+  // padding-left: 0;
+  justify-content: space-around;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+nav ul li{
+  padding: 60px;
+  a {
+    font-family: 'Bruce';
+    font-size: 12px;
+    text-decoration: none;
+    color: #E7E7E7;
+    font-weight:100;
+    font-size: 12px;
+  }
+}
+header .gradient-btn{
+  width: 200px;
+  height: 50px;
 }

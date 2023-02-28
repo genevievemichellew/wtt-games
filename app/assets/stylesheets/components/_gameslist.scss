@@ -40,22 +40,8 @@
   h4 {
     font-size: 16px;
   }
-  .gradient-btn {
-    text-decoration: none;
-    width: 50%;
-    font-family: "Bruce";
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 5px;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 100% auto;
-    color: #E7E7E7;
-    border-radius: 5px;
+  a {
     border-top-left-radius:15px;
-    background-image: linear-gradient(to right, #6E31DD 0%, #f647ff 70%);
+    width: 50%;
   }
 }
