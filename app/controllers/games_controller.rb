@@ -17,7 +17,7 @@ class GamesController < ApplicationController
   # Save uploaded game
   def create
     @game = Game.new(game_params)
-    # @game.user = current_user
+    @game.user = current_user
     if @game.save
       redirect_to game_path(@game)
     else
@@ -25,8 +25,8 @@ class GamesController < ApplicationController
     end
   end
 
-  # # Edit a game
-  # def edit; end
+  # Edit a game
+  def edit; end
 
   # # Save a game update
   # def update

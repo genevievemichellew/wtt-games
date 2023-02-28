@@ -1,0 +1,31 @@
+.card-big {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  background-color: white;
+  padding: 24px;
+  margin: 24px 0px;
+  width: 100%;
+}
+
+.card-big h1 {
+  text-align: center;
+}
+
+.card-info {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+}
+
+.card-info-text {
+  height: 100%;
+  width: 250px;
+  padding: 8px;
+}
+
+.card-info-img {
+  height: 450px;
+  width: 450px;
+  border: 1px solid black;
+  padding: 8px;
+}

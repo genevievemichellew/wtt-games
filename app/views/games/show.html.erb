@@ -1,10 +1,40 @@
-<h1><%= @game.name %></h1>
-<%= cl_image_tag @game.picture.key, height: 450, width: 450, crop: :fill %>
-<p><%= @game.name %></p>
-<p><%= @game.price %>€</p>
-
-<div>
-  <%= link_to "Edit this game", edit_game_path(@game) %> |
+<div class="navbar-lewagon">
+  <em>placehoder navbar</em>
   <%= link_to "Back to games", games_path %>
-  <%= button_to "Destroy this game", @game, method: :delete %>
+</div>
+
+<div class="container">
+
+  <div class="card-big">
+
+    <h1><%= @game.name %></h1>
+
+    <div class="card-info">
+      <div class="card-info-img">
+        <%= cl_image_tag @game.picture.key %>
+      </div>
+      <div class="card-info-text">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates reprehenderit quisquam cum facilis dolorem ipsum nesciunt ab. Veniam repudiandae facilis voluptate tenetur. Laborum, iure maiores consequatur corrupti accusamus ratione soluta.</p>
+      </div>
+    </div>
+
+    <p><%= @game.platform %></p>
+    <p><%= @game.price %>€</p>
+
+  </div>
+
+  <div class="mb-4">
+    <% if @game.user_id == current_user.id %>
+    <div class="d-flex">
+      <%= link_to "Edit this game", edit_game_path(@game), class:"btn-pink me-4" %>
+      <%= button_to "Destroy this game", @game, method: :delete, class:"btn-pink" %>
+    </div>
+    <% else %>
+      <a href="", class="btn-pink">Rent this game</a>
+    <% end %>
+  </div>
+</div>
+
+<div class="navbar-lewagon">
+  <em>placehoder footer</em>
 </div>
