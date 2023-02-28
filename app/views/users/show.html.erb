@@ -1,47 +1,49 @@
 <h1>Placeholder Navbar</h1>
 <div class="container">
-
-  <div class="user-profile ">
-    <img src="" alt="" class="avatar">
-    <p><%= @user.first_name %> <%= @user.last_name %></p>
-    <p><%= @user.email %></p>
-    <div>
-      <a href="" class="btn">Edit profile</a>
+  <div class="d-flex">
+    <div class="user-profile px-2">
+      <img src="https://media.gq-magazine.co.uk/photos/62ac38f82da9f5f89888eba9/4:3/w_888,h_666,c_limit/jon-snow-series-1200.jpeg" alt="jon snow" class="profile-picture">
+      <p class="my-4">Name: <%= @user.first_name %> <%= @user.last_name %></p>
+      <p class="mb-4">E-mail: <%= @user.email %></p>
+      <div class="m-4">
+        <a href="" class="btn btn-outline-success">Edit profile</a>
+      </div>
+      <div class="m-4">
+        <%= button_to "Log out", destroy_user_session_path, method: :delete, form: {turbolink: false}, class:"btn btn-outline-warning"%>
+      </div>
     </div>
-    <div>
-      <%= button_to "Log out", destroy_user_session_path, method: :delete, form: {turbolink: false} %>
+
+    <div class="games m-4">
+      <h2>My Games</h2>
+      <div class="cards">
+        <% if @user.games %>
+          <% @user.games.each do |game| %>
+            <div class="card">
+              <%= link_to game_path(game) do %>
+                <%= cl_image_tag game.picture.key, crop: :fill %>
+              <% end %>
+              <p><%= game.name %></p>
+            </div>
+          <% end %>
+        <% else %>
+          <p>No games</p>
+        <% end %>
+      </div>
+      <h2>My rented games</h2>
+      <div class="cards">
+        <% if @user.games %>
+          <% @user.games.each do |game| %>
+            <div class="card">
+              <%= link_to game_path(game) do %>
+                <%= cl_image_tag game.picture.key, crop: :fill %>
+              <% end %>
+              <p><%= game.name %></p>
+            </div>
+          <% end %>
+        <% else %>
+          <p>No games</p>
+        <% end %>
+      </div>
     </div>
   </div>
-
-  <div class="games">
-
-    <div class="grid border border-dark">
-      <% if @user.games %>
-        <% @user.games.each do |game| %>
-          <div class="card">
-            <%= link_to game_path(game) do %>
-              <img src= <%= game.picture %> class="" alt="game">
-            <% end %>
-          </div>
-        <% end %>
-      <% else %>
-        <p>No games</p>
-      <% end %>
-    </div>
-
-    <div class="grid">
-      <% if @user.games %>
-        <% @user.games.each do |game| %>
-          <div class="card">
-            <%= link_to game_path(game) do %>
-              <img src= <%= game.picture %> class="" alt="game">
-            <% end %>
-          </div>
-        <% end %>
-      <% else %>
-        <p>No games</p>
-      <% end %>
-    </div>
-  </div>
-
 </div>
