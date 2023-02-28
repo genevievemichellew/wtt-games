@@ -5,27 +5,31 @@
   padding: 24px;
   margin: 24px 0px;
   width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .card-big h1 {
   text-align: center;
+  margin: 20px 0px;
 }
 
 .card-info {
   display: flex;
   flex-wrap: wrap;
+  margin: 20px 0px;
   // justify-content: space-between;
 }
 
 .card-info-text {
   height: 100%;
-  width: 250px;
-  padding: 8px;
+  width: 100%;
+  padding: 12px;
 }
 
+
 .card-info-img {
-  height: 450px;
-  width: 450px;
+  height: 400px;
+  width: 400px;
   border: 1px solid black;
   padding: 8px;
 }
