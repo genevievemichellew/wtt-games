@@ -1,11 +1,10 @@
 <h1><%= @game.name %></h1>
-<%= game.picture %>
-<%= game.name %>
-<%= game.price %>
-
+<img src = <%= @game.picture %>>
+<p><%= @game.name %></p>
+<p><%= @game.price %>€</p>
 
 <div>
-  <%= link_to "Edit this game", edit_game_path(@game) %> |
+  <%= link_to "Edit this game", edit_game_path(@game) %>
   <%= link_to "Back to games", games_path %>
   <%= button_to "Destroy this game", @game, method: :delete %>
 </div>
