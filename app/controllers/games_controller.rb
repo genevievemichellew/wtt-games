@@ -15,15 +15,17 @@ class GamesController < ApplicationController
   end
 
   # Save uploaded game
-  # def create
-  #   @game = Game.new(game_params)
+  def create
+    @game = Game.new(game_params)
+    @game.save!
+    redirect_to games_path
   #   # @game.user = current_user
   #   if @game.save
   #     redirect_to user_path(@user)
   #   else
   #     render "users/show", status: :unprocessable_entity
   #   end
-  # end
+  end
 
   # # Edit a game
   # def edit; end
@@ -35,15 +37,15 @@ class GamesController < ApplicationController
   # end
 
   # # Delete a game
-  # def destroy
-  #   @game.destroy
-  #   redirect_to user_path(@game.user), status: :see_other
-  # end
+  def destroy
+    @game.destroy
+    redirect_to user_path(@game), status: :see_other
+  end
 
   private
 
   def game_params
-    params.require(:game).permit(:name, :picture, :platform, :price)
+    params.require(:game).permit(:name, :photo, :platform, :price)
   end
 
   def set_game
