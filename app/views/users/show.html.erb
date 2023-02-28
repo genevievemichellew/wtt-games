@@ -1,21 +1,26 @@
 <h1>Placeholder Navbar</h1>
 <div class="container">
-  <div class="user-profile">
+
+  <div class="user-profile ">
     <img src="" alt="" class="avatar">
     <p><%= @user.first_name %> <%= @user.last_name %></p>
     <p><%= @user.email %></p>
     <div>
       <a href="" class="btn">Edit profile</a>
     </div>
+    <div>
+      <%= button_to "Log out", destroy_user_session_path, method: :delete, form: {turbolink: false} %>
+    </div>
   </div>
 
   <div class="games">
-    <div class="grid">
+
+    <div class="grid border border-dark">
       <% if @user.games %>
         <% @user.games.each do |game| %>
           <div class="card">
             <%= link_to game_path(game) do %>
-              <img src="https://images4.alphacoders.com/952/thumbbig-952572.webp" class="" alt="game">
+              <img src= <%= game.picture %> class="" alt="game">
             <% end %>
           </div>
         <% end %>
@@ -29,7 +34,7 @@
         <% @user.games.each do |game| %>
           <div class="card">
             <%= link_to game_path(game) do %>
-              <img src="https://images4.alphacoders.com/952/thumbbig-952572.webp" class="" alt="game">
+              <img src= <%= game.picture %> class="" alt="game">
             <% end %>
           </div>
         <% end %>
@@ -38,4 +43,5 @@
       <% end %>
     </div>
   </div>
+
 </div>
