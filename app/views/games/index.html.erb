@@ -1,12 +1,16 @@
+<div class = 'container games'>
 <h1>Games</h1>
-
-<div id="games">
-  <% @games.each do |game| %>
-    <h3><%= game.name %></h3>
-    <p>
-      <%= link_to "Show this game", game %>
-    </p>
-  <% end %>
-</div>
-
+  <div class = 'gameslist'>
+    <% @games.each do |game| %>
+      <div class = 'gameslist-game'>
+        <div class = 'game-img'><%= cl_image_tag game.picture.key, height: 300, width: 300, crop: :fill %></div>
+        <p><%= game.name %></p>
+        <div class = 'game-bottom-part'>
+          <p><%= game.price %>€</p>
+          <%= link_to "Show", game, class: 'gradient-btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <%= link_to "New game", new_game_path %>
+</div>

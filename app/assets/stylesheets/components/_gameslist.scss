@@ -1,0 +1,42 @@
+.gameslist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+}
+
+.gameslist-game {
+  display: flex;
+  flex-flow: column;
+  padding: 10px;
+  background-color: #15213F;
+  border-radius: 5px;
+}
+.game-img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  img {
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+.game-bottom-part {
+  display: flex;
+  justify-content: space-between;
+  .gradient-btn {
+    text-decoration: none;
+    width: 50%;
+    display: block;
+    padding: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s, background-position;
+    background-size: 100% auto;
+    color: #E7E7E7;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, #6E31DD 0%, #f647ff 70%);
+  }
+  .graident-btn:hover {
+    background-position: right center;
+  }
+}
