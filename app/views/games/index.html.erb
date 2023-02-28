@@ -1,4 +1,6 @@
-<h1>Games</h1>
+<%= link_to "See my games and profile", user_path(current_user) %> | <%= link_to "Add a new game", new_game_path %>
+
+<h1>All Games</h1>
 
 <div id="games">
   <% @games.each do |game| %>
@@ -8,5 +10,3 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New game", new_game_path %>

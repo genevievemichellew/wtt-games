@@ -10,38 +10,27 @@
     </div>
     <div>
       <%= button_to "Log out", destroy_user_session_path, method: :delete, form: {turbolink: false} %>
+      <p></p>
     </div>
   </div>
 
   <div class="games">
 
     <div class="grid border border-dark">
-      <% if @user.games %>
+      <% if @user.games == [] %>
+        <p>You have no games</p>
+      <% else %>
         <% @user.games.each do |game| %>
           <div class="card">
             <%= link_to game_path(game) do %>
-              <img src= <%= game.picture %> class="" alt="game">
+              <%= cl_image_tag game.picture.key, height: 450, width: 450, crop: :fill %>
             <% end %>
           </div>
         <% end %>
-      <% else %>
-        <p>No games</p>
       <% end %>
     </div>
-
-    <div class="grid">
-      <% if @user.games %>
-        <% @user.games.each do |game| %>
-          <div class="card">
-            <%= link_to game_path(game) do %>
-              <img src= <%= game.picture %> class="" alt="game">
-            <% end %>
-          </div>
-        <% end %>
-      <% else %>
-        <p>No games</p>
-      <% end %>
-    </div>
-  </div>
-
+  <p></p>
+  <p><%= link_to "Add a new game", new_game_path %></p>
+  <p></p>
+  <p><%= link_to "Back to main page", games_path %></p>
 </div>

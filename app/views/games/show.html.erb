@@ -1,11 +1,13 @@
 <h1><%= @game.name %></h1>
 <%= cl_image_tag @game.picture.key, height: 450, width: 450, crop: :fill %>
 <p><%= @game.name %></p>
+<p><%= @game.platform %></p>
 <p><%= @game.price %>€</p>
 
 
 <div>
   <%= link_to "Edit this game", edit_game_path(@game) if @game.user == current_user %> |
-  <%= link_to "Back to games", games_path %>
+  <%= link_to "My games", user_path(current_user) %> |
+  <%= link_to "Main page", games_path %>
   <%= button_to "Destroy this game", @game, method: :delete if @game.user == current_user %>
 </div>
