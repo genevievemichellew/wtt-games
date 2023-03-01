@@ -1,9 +1,16 @@
+<nav class="navbar sticky-top navbar-light my-navbar">
+  <div class="container-fluid p-0">
+    <%= link_to "LOGO", root_path, class:'logo'%>
+      <ul class="middle">
+          <li><%= link_to "Games", games_path %></li>
+          <li><%= link_to "Profile", user_path(current_user) %></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, form: {turbolink: false}, class:'gradient-btn'%>
+  </div>
+</nav>
 
-<div class="navbar-lewagon">
-  <em>placehoder navbar</em>
-
-  <%= link_to "Back to games", games_path %>
-</div>
+<%# <%= link_to "Back to games", games_path %>
 
 <div class="container">
 
@@ -13,28 +20,32 @@
 
     <div class="card-info">
       <div class="card-info-img">
-        <%= cl_image_tag @game.picture.key %>
+        <%= cl_image_tag @game.picture.key, height: 300, width: 300, crop: :fill%>
       </div>
       <div class="card-info-text">
+        <p><%= @game.platform %></p>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates reprehenderit quisquam cum facilis dolorem ipsum nesciunt ab. Veniam repudiandae facilis voluptate tenetur. Laborum, iure maiores consequatur corrupti accusamus ratione soluta.</p>
       </div>
     </div>
-
-    <p><%= @game.platform %></p>
-    <p><%= @game.price %>€</p>
-
-  </div>
-
-  <div class="mb-4">
-    <% if @game.user_id == current_user.id %>
-    <div class="d-flex">
-      <%= link_to "Edit this game", edit_game_path(@game), class:"btn-pink me-4" %>
-      <%= button_to "Destroy this game", @game, method: :delete, class:"btn-pink" %>
+    <div class="card-price">
+      <p>Price:<%= @game.price %>€</p>
     </div>
-    <% else %>
-      <a href="", class="btn-pink">Rent this game</a>
-    <% end %>
+
+    <div class="mb-4">
+      <% if @game.user_id == current_user.id %>
+        <div class="d-flex">
+          <%= link_to "Edit this game", edit_game_path(@game), class: "gradient-btn" %>
+          <%= button_to "Destroy this game", @game, method: :delete, class: "gradient-btn ms-4" %>
+        </div>
+      <% else %>
+        <div class="d-flex">
+          <%= link_to "Rent this game", edit_game_path(@game), class: "gradient-btn" %>
+        </div>
+      <% end %>
+    </div>
+
   </div>
+
 </div>
 
 <div class="navbar-lewagon">
