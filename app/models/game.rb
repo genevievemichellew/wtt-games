@@ -1,4 +1,5 @@
 class Game < ApplicationRecord
+
   PLATFORM = [
     'Dreamcast', 'Game Boy', 'Game Gear', 'Nintendo (NES)', 'Nintendo 64', 'Playstation',
     'Playstation 2', 'Playstation 3', 'Playstation 4', 'Playstation 5', 'Sega Genesis (Mega Drive)',

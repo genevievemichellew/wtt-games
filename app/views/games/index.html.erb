@@ -1,12 +1,16 @@
-<%= link_to "See my games and profile", user_path(current_user) %> | <%= link_to "Add a new game", new_game_path %>
-
-<h1>All Games</h1>
-
-<div id="games">
-  <% @games.each do |game| %>
-    <h3><%= game.name %></h3>
-    <p>
-      <%= link_to "Show this game", game %>
-    </p>
-  <% end %>
+<div class = 'container games p-0 w-100'>
+<h1>Games</h1>
+  <div class = 'gameslist'>
+    <% @games.each do |game| %>
+      <div class = 'gameslist-game'>
+        <p><%= game.platform %></p>
+        <div class = 'game-img'><%= cl_image_tag game.picture.key, height: 300, width: 300, crop: :fill %></div>
+        <p><%= game.name %></p>
+        <div class = 'game-bottom-part'>
+          <h4>Price: <%= game.price %>€</h4>
+          <%= link_to "Show", game, class: 'gradient-btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

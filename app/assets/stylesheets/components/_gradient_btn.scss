@@ -1,0 +1,20 @@
+.gradient-btn {
+  text-decoration: none;
+  font-family: "Bruce forever";
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 100% auto;
+  color: #E7E7E7;
+  border-radius: 5px;
+  border:1px solid #E7E7E7;
+  background-image: linear-gradient(to right, #6E31DD 0%, #f647ff 70%);
+}
+.gradient-btn:hover {
+  color: #E7E7E7;
+}

@@ -1,3 +1,5 @@
+require "open-uri"
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -123,6 +125,7 @@ game = Game.new(
   price: 5,
   user_id: jon.id
 )
+
 game.picture.attach(io: file, filename: 'the_last_of_us.png', content_type: 'image/png')
 game.save
 

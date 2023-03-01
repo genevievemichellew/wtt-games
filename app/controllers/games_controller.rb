@@ -37,6 +37,7 @@ class GamesController < ApplicationController
     end
   end
 
+
   # Delete a game
   def destroy
     @game.destroy
@@ -46,7 +47,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :picture, :platform, :price)
+    params.require(:game).permit(:name, :photo, :platform, :price)
   end
 
   def set_game

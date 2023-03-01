@@ -1,14 +1,50 @@
-<h1><%= @game.name %></h1>
-<%= cl_image_tag @game.picture.key, height: 450, width: 450, crop: :fill %>
-<p><%= @game.name %></p>
-<p><%= @game.platform %></p>
-<p><%= @game.price %>€</p>
+<nav class="navbar sticky-top navbar-light my-navbar">
+  <div class="container-fluid p-0">
+    <%= link_to "LOGO", root_path, class:'logo'%>
+      <ul class="middle">
+          <li><%= link_to "Games", games_path %></li>
+          <li><%= link_to "Profile", user_path(current_user) %></li>
+          <li><a href="#">Contact</a></li>
+      </ul>
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, form: {turbolink: false}, class:'gradient-btn'%>
+  </div>
+</nav>
 
+<%# <%= link_to "Back to games", games_path %>
 
-<div>
-  <%= link_to "Rent this game", new_game_rent_path(@game) if @game.user != current_user %> |
-  <%= link_to "Edit this game", edit_game_path(@game) if @game.user == current_user %> |
-  <%= link_to "My games", user_path(current_user) %> |
-  <%= link_to "Main page", games_path %>
-  <%= button_to "Destroy this game", @game, method: :delete if @game.user == current_user %>
+<div class="container">
+
+  <div class="card-big">
+
+    <h1><%= @game.name %></h1>
+
+    <div class="card-info">
+      <div class="card-info-img">
+        <%= cl_image_tag @game.picture.key, height: 300, width: 300, crop: :fill%>
+      </div>
+      <div class="card-info-text">
+        <p><%= @game.platform %></p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates reprehenderit quisquam cum facilis dolorem ipsum nesciunt ab. Veniam repudiandae facilis voluptate tenetur. Laborum, iure maiores consequatur corrupti accusamus ratione soluta.</p>
+      </div>
+    </div>
+    <div class="card-price">
+      <p>Price:<%= @game.price %>€</p>
+    </div>
+
+    <div class="mb-4">
+      <% if @game.user_id == current_user.id %>
+        <div class="d-flex">
+          <%= link_to "Edit this game", edit_game_path(@game), class: "gradient-btn" %>
+          <%= button_to "Destroy this game", @game, method: :delete, class: "gradient-btn ms-4" %>
+        </div>
+      <% else %>
+        <div class="d-flex">
+          <%= link_to "Rent this game", edit_game_path(@game), class: "gradient-btn" %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
 </div>
+
