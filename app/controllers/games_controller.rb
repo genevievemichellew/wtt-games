@@ -25,8 +25,8 @@ class GamesController < ApplicationController
     end
   end
 
-  # # Edit a game
-  # def edit; end
+  # Edit a game
+  def edit; end
 
   # # Save a game update
   # def update
