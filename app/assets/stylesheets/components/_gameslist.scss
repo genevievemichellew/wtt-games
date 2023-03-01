@@ -1,0 +1,46 @@
+.gameslist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
+  width: fit-content;
+}
+.gameslist-game {
+  display: flex;
+  flex-flow: column;
+  padding: 10px;
+  background-color: #17122F;
+  opacity: 0.75;
+  transition: 0.5s;
+  border-radius: 5px;
+  p {
+    margin: 16px 0;
+  }
+}
+.gameslist-game:hover {
+  opacity: 1;
+}
+.game-img {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  img {
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #E7E7E7;
+  }
+}
+.game-bottom-part {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bruce forever";
+  padding: 5px;
+  height: 50px;
+  align-items: bottom;
+  h4 {
+    font-size: 16px;
+  }
+  a {
+    border-top-left-radius:15px;
+    width: 50%;
+  }
+}
