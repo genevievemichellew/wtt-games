@@ -29,6 +29,39 @@
         <% end %>
       <% end %>
     </div>
+
+    <div class="grid border border-dark">
+      <% if @rents == [] %>
+        <p>You didn't rent any games</p>
+      <% else %>
+        <p>Here are the games you've rented:</p>
+        <% @rents.each do |rent| %>
+          <div class="card">
+            <p>from <%= rent.start_date %> to <%= rent.end_date %></p>
+
+            <p>Status: <%= rent.status %></p>
+            <%= cl_image_tag rent.game.picture.key, height: 450, width: 450, crop: :fill %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="grid border border-dark">
+      <% if @received_rents == [] %>
+        <p>Nobody rented games from you at the moment</p>
+      <% else %>
+        <p>Here are the games other people rented from you:</p>
+        <% @received_rents.each do |rent| %>
+          <div class="card">
+            <p><%= button_to "Confirm this rent", rent_path(rent, {status: 'confirmed'}), method: :patch if rent.status == 'pending' %></p>
+            <p><%= button_to "Reject this rent", rent_path(rent, {status: 'canceled'}), method: :patch if rent.status == 'pending' %></p>
+            <p>from <%= rent.start_date %> to <%= rent.end_date %></p>
+            <p>Status: <%= rent.status %></p>
+            <%= cl_image_tag rent.game.picture.key, height: 450, width: 450, crop: :fill %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   <p></p>
   <p><%= link_to "Add a new game", new_game_path %></p>
   <p></p>

@@ -6,6 +6,7 @@
 
 
 <div>
+  <%= link_to "Rent this game", new_game_rent_path(@game) if @game.user != current_user %> |
   <%= link_to "Edit this game", edit_game_path(@game) if @game.user == current_user %> |
   <%= link_to "My games", user_path(current_user) %> |
   <%= link_to "Main page", games_path %>
