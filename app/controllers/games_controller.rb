@@ -34,16 +34,17 @@ class GamesController < ApplicationController
   #   # redirect_to game_path(@game)
   # end
 
+
   # Delete a game
   def destroy
     @game.destroy
-    redirect_to games_path, status: :see_other
+    redirect_to user_path(@game.user), status: :see_other
   end
 
   private
 
   def game_params
-    params.require(:game).permit(:name, :picture, :platform, :price)
+    params.require(:game).permit(:name, :photo, :platform, :price)
   end
 
   def set_game
