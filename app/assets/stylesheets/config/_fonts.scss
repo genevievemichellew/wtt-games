@@ -16,3 +16,11 @@ $body-font: "Poppins";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+@font-face {
+  font-family: "Bruce";
+  src: font-url("Bruce.ttf");
+}
+/* @font-face {
+  font-family: "Sans";
+  src: font-url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;600&family=Poppins:ital,wght@0,400;1,300&family=Signika+Negative:wght@700&family=Unbounded:wght@200&family=Work+Sans:wght@200&display=swap');
+} */

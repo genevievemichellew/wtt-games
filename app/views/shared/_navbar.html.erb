@@ -1,0 +1,19 @@
+    <nav class="navbar sticky-top navbar-light my-navbar">
+      <div class="container-fluid p-0">
+        <%= link_to "LOGO", root_path, class:'logo'%>
+          <ul class="middle">
+              <li><%= link_to "Games", games_path %></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Profile", user_path(current_user) %></li>
+              <% else %>
+                <li><%= link_to "Profile", user_session_path %></li>
+              <% end %>
+              <li><a href="#">Contact</a></li>
+          </ul>
+        <% if user_signed_in? %>
+          <%= button_to "Sign in", user_session_path, class:'gradient-btn'%>
+        <% else %>
+          <%= button_to "Log out", destroy_user_session_path, method: :delete, form: {turbolink: false}, class:'gradient-btn'%>
+        <% end %>
+      </div>
+    </nav>

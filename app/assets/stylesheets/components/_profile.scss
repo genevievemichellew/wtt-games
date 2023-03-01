@@ -1,0 +1,20 @@
+.container-profile {
+  display: flex;
+}
+
+.user-profile {
+  height: 100vh;
+  position: sticky;
+  top: 90;
+  width: 350;
+
+}
+
+.profile-picture {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: white 1px solid;
+  object-fit: contain;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
