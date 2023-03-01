@@ -1,0 +1,14 @@
+.cards-profile {
+  margin: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-profile {
+  margin: 8px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
