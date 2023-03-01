@@ -1,28 +1,18 @@
-<div class = 'newback'>
-  <nav class="navbar sticky-top navbar-light my-navbar">
-  <div class="container-fluid p-0">
-    <%= link_to "LOGO", root_path, class:'logo'%>
-        <ul class="middle">
-          <li><%= link_to "Games", games_path %></li>
-          <li><%= link_to "Profile", user_path(current_user) %></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      <%= button_to "Log out", destroy_user_session_path, method: :delete, form: {turbolink: false}, class:'gradient-btn'%>
-    </div>
-  </nav>
+<body class = 'newback'>
   <div class = 'container games p-0 w-100'>
     <h1>New game</h1>
     <div class = 'new-game'>
-    <div class = 'new-game-form'>
-      <%= render "form", game: @game %>
-    </div>
-    <div class = 'new-game-right'>
-      <div class = 'grey-text first'>
-        <p>Safety is guaranteed</p>
+      <div class = 'new-game-form'>
+        <%= render "form", game: @game %>
       </div>
-      <div class = 'grey-text second'>
-        <p>Our members save more with Monthly Coupons, Member-Only Discounts and GameFly Dollars</p>
+      <div class = 'new-game-right'>
+        <div class = 'grey-text first'>
+          <p>Safety is guaranteed</p>
+        </div>
+        <div class = 'grey-text second'>
+          <p>Our members save more with Monthly Coupons, Member-Only Discounts and GameFly Dollars</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</body>

@@ -1,4 +1,4 @@
-.newback {
+body.newback {
   background-image: asset-url('desktop.png');
   position: relative;
   height: 100vh;
@@ -15,6 +15,8 @@
   text-align: start;
   label, input, select {
     font-family: 'Bruce Forever';
+    background: none;
+    color: #E7E7E7;
   }
 }
 .new-game-right {
@@ -66,4 +68,8 @@
     font-family:'Bruce Forever';
     border-top-right-radius:15px;
   }
+}
+.form-control, .form-check-input {
+  color: #E7E7E7;
+  background: none;
 }
