@@ -1,0 +1,69 @@
+.newback {
+  background-image: asset-url('desktop.png');
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.new-game {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.new-game-form {
+  padding:50px 0;
+  text-align: start;
+  label, input, select {
+    font-family: 'Bruce Forever';
+  }
+}
+.new-game-right {
+}
+.form-actions .gradient-btn {
+  width: 200px;
+  height: 50px;
+}
+.grey-text {
+  width: 100px;
+  height: 50px;
+  border-radius:2px solid #E7E7E7;
+  position: absolute;
+  border:1px solid #E7E7E7;
+}
+.first {
+  width: 250px;
+  height: 112px;
+  right: 460px;
+  bottom: 130px;
+  color: #301661;
+  padding: 5px;
+  border-bottom-left-radius:15px;
+  p {
+    display: block;
+    margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family:'Bruce Forever';
+    height: 100%;
+    border-bottom-left-radius:15px;
+    text-align: center;
+    padding-top: 25px;
+    font-size:16px;
+  }
+}
+.second {
+  width: 236px;
+  height: 122px;
+  right: 50px;
+  bottom: 315px;
+  padding: 3px;
+  text-align: center;
+  color: #3f276b;
+  border-top-right-radius:15px;
+  p {
+    display: block;
+    margin-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    font-family:'Bruce Forever';
+    border-top-right-radius:15px;
+  }
+}

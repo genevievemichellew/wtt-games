@@ -1,41 +1,3 @@
-<<<<<<< HEAD
-<header>
-    <a href="#" class="logo">OUR LOGO</a>
-    <nav>
-        <ul>
-            <li><a href="#">Games</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-    <a href="#" class= 'gradient-btn'>Send</a>
-</header>
-<div class = 'container games'>
-<h1>Games</h1>
-  <div class = 'gameslist'>
-    <% @games.each do |game| %>
-      <div class = 'gameslist-game'>
-=======
-<<<<<<< Updated upstream
-<h1>Games</h1>
-
-<div id="games">
-  <% @games.each do |game| %>
-    <h3><%= game.name %></h3>
-    <p>
-      <%= link_to "Show this game", game %>
-    </p>
-  <% end %>
-=======
-<!--<nav>
-  <a href="#" class="logo">OUR LOGO</a>
-  <ul>
-      <li><a href="#">Games</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Contact</a></li>
-  </ul>
-  <a href="#" class= 'gradient-btn'>Send</a>
-</nav>-->
 <nav class="navbar sticky-top navbar-light my-navbar">
   <div class="container-fluid p-0">
     <%= link_to "LOGO", root_path, class:'logo'%>
@@ -53,7 +15,6 @@
     <% @games.each do |game| %>
       <div class = 'gameslist-game'>
         <p><%= game.platform %></p>
->>>>>>> 838877a56a52c0e11e35d74117af3ead922be1c2
         <div class = 'game-img'><%= cl_image_tag game.picture.key, height: 300, width: 300, crop: :fill %></div>
         <p><%= game.name %></p>
         <div class = 'game-bottom-part'>
@@ -63,12 +24,5 @@
       </div>
     <% end %>
   </div>
-<<<<<<< HEAD
-=======
 <!--<%= link_to "New game", new_game_path %>-->
->>>>>>> Stashed changes
-</div>
-
->>>>>>> 838877a56a52c0e11e35d74117af3ead922be1c2
-<%= link_to "New game", new_game_path %>
 </div>
