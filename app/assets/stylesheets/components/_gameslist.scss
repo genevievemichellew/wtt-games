@@ -8,9 +8,10 @@
 .gameslist-game {
   display: flex;
   flex-flow: column;
+  position: relative;
   padding: 10px;
   background-color: #17122F;
-  opacity: 0.75;
+  opacity: 0.65;
   transition: 0.5s;
   border-radius: 5px;
   p {
@@ -44,4 +45,17 @@
     border-top-left-radius:15px;
     width: 50%;
   }
+}
+.platform {
+  width: 150px;
+  background: green;
+  padding: 5px 10px;
+  text-align: center;
+  border: 5px;
+  border-bottom-left-radius:20px;
+  border-top-right-radius:20px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  opacity: 0.9;
 }
