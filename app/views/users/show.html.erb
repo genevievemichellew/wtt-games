@@ -1,89 +1,98 @@
 
-<div class="container-profile">
-  <div class="d-flex">
-    <div class="user-profile px-2">
+<div class="container">
+  <div class="container-profile">
+
+    <%# flex item 1 %>
+    <div class="profile-user">
       <%# <%= cl_image_tag user.picture.key, height: 150, width: 150, crop: :fill %>
-      <p class="my-4">Name: <%= @user.first_name %> <%= @user.last_name %></p>
-      <p class="mb-4">E-mail: <%= @user.email %></p>
-      <div class="m-4">
-        <a href="<%= edit_user_registration_path %>" class="btn btn-outline-success">Edit profile</a>
-      </div>
-      <p><%= link_to "Back to main page", games_path %></p>
-      <div class="m-4">
-        <%= button_to "Log out", destroy_user_session_path, method: :delete, form: {turbolink: false}, class:"btn btn-outline-warning"%>
-      </div>
-    </div>
-
-# REVIEW FROM 17 TO 54
-    <div class="grid border border-dark">
-      <% if @rents == [] %>
-        <p>You didn't rent any games</p>
-      <% else %>
-        <p>Here are the games you've rented:</p>
-        <% @rents.each do |rent| %>
-          <div class="card">
-            <p>from <%= rent.start_date %> to <%= rent.end_date %></p>
-
-            <p>Status: <%= rent.status %></p>
-            <%= cl_image_tag rent.game.picture.key, height: 450, width: 450, crop: :fill %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-
-    <div class="grid border border-dark">
-      <% if @received_rents == [] %>
-        <p>Nobody rented games from you at the moment</p>
-      <% else %>
-        <p>Here are the games other people rented from you:</p>
-        <% @received_rents.each do |rent| %>
-          <div class="card">
-            <p><%= button_to "Confirm this rent", rent_path(rent, {status: 'confirmed'}), method: :patch if rent.status == 'pending' %></p>
-            <p><%= button_to "Reject this rent", rent_path(rent, {status: 'canceled'}), method: :patch if rent.status == 'pending' %></p>
-            <p>from <%= rent.start_date %> to <%= rent.end_date %></p>
-            <p>Status: <%= rent.status %></p>
-            <%= cl_image_tag rent.game.picture.key, height: 450, width: 450, crop: :fill %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <p></p>
-  <p><%= link_to "Add a new game", new_game_path %></p>
-  <p></p>
-  <p><%= link_to "Back to main page", games_path %></p>
-=======
-    <div class="m-4">
-      <h2>My Games</h2>
-      <div class="cards-profile">
-        <% if @user.games == [] %>
-          <p>You have no games</p>
-        <% else %>
-          <% @user.games.each do |game| %>
-            <div>
-              <%= link_to game_path(game), class:"card-profile" do %>
-                <%= cl_image_tag game.picture.key, height: 150, width: 150, crop: :fill %>
-              <% end %>
-              <p><%= game.name %></p>
-            </div>
+      <img class="profile-picture" src="https://media.gq-magazine.co.uk/photos/62ac38f82da9f5f89888eba9/4:3/w_888,h_666,c_limit/jon-snow-series-1200.jpeg" alt="">
+      <h4><%= @user.first_name %> <%= @user.last_name %></h4>
+      <p>E-mail: <%= @user.email %></p>
+        <div class="btn-small">
+          <a href="<%= edit_user_registration_path %>" class="gradient-btn">Edit profile</a>
+        </div>
+        <div class="btn-small">
+          <%= link_to "Add new game", new_game_path, class:"gradient-btn" %>
+        </div>
+        <div class="mt-4">
+          <% if @received_rents == [] %>
+            <p>All up to date</p>
+          <% else %>
+            <p><strong>Action required!</strong></p>
           <% end %>
-        <% end %>
-        <p><%= link_to "Add a new game", new_game_path %></p>
-      </div>
-      <h2>My rented games</h2>
-      <div class="cards-profile">
-        <% if @user.games == [] %>
-          <p>You have no games</p>
-        <% else %>
-          <% @user.games.each do |game| %>
-            <div>
-              <%= link_to game_path(game), class:"card-profile" do %>
-                <%= cl_image_tag game.picture.key, height: 150, width: 150, crop: :fill %>
-              <% end %>
-              <p><%= game.name %></p>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+        </div>
     </div>
+
+
+    <%# flex item 2 %>
+    <div class="profile-games">
+
+      <%# my games %>
+      <div class="profile-my-games">
+        <h2>My Games</h2>
+        <div class="profile-games-cards">
+          <% if @user.games == [] %>
+            <p>You have no games</p>
+          <% else %>
+            <% @user.games.each do |game| %>
+              <div class="profile-games-card">
+                <%= link_to game_path(game) do %>
+                  <%= cl_image_tag game.picture.key, height: 150, width: 150, crop: :fill %>
+                <% end %>
+                <p><%= game.name %></p>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <%# my rents %>
+      <div class="profile-rented-games">
+        <h2>My Rented Games</h2>
+        <div class="profile-games-cards">
+          <% if @rents == [] %>
+            <p>You have no rented games</p>
+          <% else %>
+            <% @rents.each do |rent| %>
+              <div class="profile-games-card">
+                <%= link_to game_path(rent) do %>
+                  <%= cl_image_tag rent.game.picture.key, height: 150, width: 150, crop: :fill %>
+                <% end %>
+                <p><%= rent.game.name %></p>
+                <div class="profile-games-info">
+                  <p>Status: <strong><%= rent.status %></strong></p>
+                  <p><%= rent.start_date %> to <%= rent.end_date %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <%# accept/reject rent %>
+      <div class="profile-rented-games">
+        <h2>Action Required!</h2>
+        <div class="profile-games-cards">
+          <% if @received_rents == [] %>
+            <p>All up to date</p>
+          <% else %>
+            <% @received_rents.each do |rent| %>
+              <div>
+                <%= link_to game_path(rent), class:"profile-games-card" do %>
+                  <p><%= button_to "Confirm this rent", rent_path(rent, {status: 'confirmed'}), method: :patch if rent.status == 'pending' %></p>
+                  <p><%= button_to "Reject this rent", rent_path(rent, {status: 'canceled'}), method: :patch if rent.status == 'pending' %></p>
+                  <p>from <%= rent.start_date %> to <%= rent.end_date %></p>
+                  <p>Status: <%= rent.status %></p>
+                  <%= cl_image_tag rent.game.picture.key, height: 150, width: 150, crop: :fill %>
+                <% end %>
+                <p><%= rent.game.name %></p>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </div>
