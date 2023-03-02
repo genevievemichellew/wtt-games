@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :rents, dependent: :destroy
   has_many :games, dependent: :destroy
   has_many :received_rents, through: :games, source: :rents
+  has_one_attached :photo
 
   validates_uniqueness_of :email
   validates_presence_of :email
