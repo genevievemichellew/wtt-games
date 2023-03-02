@@ -19,26 +19,29 @@ class GamesController < ApplicationController
     @game = Game.new(game_params)
     @game.user = current_user
     if @game.save
-      redirect_to game_path(@game)
+      redirect_to user_path(current_user)
     else
-      render "games/show", status: :unprocessable_entity
+      render "games/new", status: :unprocessable_entity
     end
   end
 
   # Edit a game
   def edit; end
 
-  # # Save a game update
-  # def update
-  #   @game.update(game_params)
-  #   # redirect_to game_path(@game)
-  # end
+  # Save a game update
+  def update
+    if @game.update(game_params)
+      redirect_to user_path(current_user)
+    else
+      render "games/edit", status: :unprocessable_entity
+    end
+  end
 
 
   # Delete a game
   def destroy
     @game.destroy
-    redirect_to user_path(@game.user), status: :see_other
+    redirect_to user_path(current_user), status: :see_other
   end
 
   private

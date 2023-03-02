@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show]
 
-  def show; end
+  def show
+    @rents = Rent.all.where(user: current_user)
+    @received_rents = current_user.received_rents
+  end
 
   private
 
