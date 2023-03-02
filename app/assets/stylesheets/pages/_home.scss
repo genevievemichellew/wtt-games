@@ -1,1 +1,124 @@
 // Specific CSS for your home-page
+.running-line {
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  height: 100px;
+  position: relative;
+  // margin-top:400px;
+
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 65px;
+    transform: translate(100%, 0);
+
+    p {
+      font-family: 'Roboto', sans-serif;
+      color: #E7E7E7;
+      text-transform: uppercase;
+      margin: 0;
+      font-family: 'Bruce Forever';
+      font-weight: bold;
+      display: block;
+      border:2px solid #E7E7E7;
+      border-radius: 5px;
+      padding:4px 8px;
+    }
+    img{
+      height: 60px;
+    }
+  }
+
+  $duration: 30s;
+
+  .first-half, .second-half {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    animation: ticker $duration infinite linear forwards;
+  }
+
+  .second-half {
+    animation: $duration ticker $duration/2 infinite linear forwards;
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translate(100%, 0);
+  }
+
+  50% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+.homepage-second {
+  height:700px;
+  padding-top: 200px;
+  text-align: center;
+}
+.homepage-first {
+  background-image: linear-gradient(#6E31DD 0%, #f647ff 100%), url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  height:700px;
+  display: flex;
+  padding: 200px;
+  text-align: center;
+  align-items: center;
+  h1 {
+    margin: 0;
+  }
+}
+.how-to-rent {
+  display: flex;
+  border-radius: 30px;
+  height: 300px;
+  margin: 0 40px;
+  background-color: #2f0e46;
+  padding: 10px;
+  #first-step {
+    border-right: 2px solid #E7E7E7;
+    text-align: center;
+    width: 600px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    p {
+      font-size: 40px;
+      margin-bottom: 0;
+      font-family: 'Bruce Forever';
+    }
+  }
+  #second-step {
+    border-right: 2px solid #E7E7E7;
+    width: 300px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding:0 40px;
+  }
+  #third-step {
+    width: 300px;
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    padding:0 40px;
+  }
+}

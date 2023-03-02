@@ -1,8 +1,8 @@
 
 <nav class="navbar sticky-top navbar-light my-navbar">
   <div class="container-fluid p-0">
-    <%= link_to root_path, class:'logo' do %>
-      <img src = "../../assets/images/LOGO.png">
+    <%= link_to root_path do %>
+      <div class = "nav-left"><%= image_tag "LOGO.png", class: "logo" %></div>
     <% end %>
     <ul class="middle">
         <li><%= link_to "Games", games_path %></li>

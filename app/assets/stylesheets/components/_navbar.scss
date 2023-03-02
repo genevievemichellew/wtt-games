@@ -1,16 +1,11 @@
 .logo{
   // color: #FFF;
-  font-weight: 900;
-  text-decoration: none;
-  font-family: 'Bruce forever';
-  display: content;
-  width: 200px;
-  height: 50px;
-  font-size: 30px;
-  color:#f647ff;
+  object-fit: cover;
+  width: 85px;
+  display: block;
 }
 .my-navbar {
-  padding:20px 200px;
+  padding:10px 200px;
   background: #301B40;
   text-align: end;
   .middle {
@@ -46,4 +41,10 @@
 }
 .logo:hover {
   color: black;
+}
+.nav-left {
+  display: flex;
+  width: 200px;
+  height: 80px;
+  justify-content: center;
 }

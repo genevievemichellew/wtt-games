@@ -20,6 +20,8 @@
 }
 .gameslist-game:hover {
   opacity: 1;
+  box-shadow:5px 5px 10px rgb(255, 255, 255);
+
 }
 .game-img {
   margin: 0;
@@ -47,15 +49,16 @@
   }
 }
 .platform {
-  width: 150px;
-  background: green;
-  padding: 5px 10px;
+  width: 130px;
+  background: black;
+  color: #E7E7E7;
+  padding: 3px;
   text-align: center;
-  border: 5px;
-  border-bottom-left-radius:20px;
-  border-top-right-radius:20px;
+  border-radius: 5px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
   position: absolute;
+  font-weight: bold;
   top: -10px;
-  left: -10px;
-  opacity: 0.9;
+  left: -8px;
 }
