@@ -1,12 +1,11 @@
 .my-footer {
   padding:20px 200px;
   background: rgba(255, 255, 255, 0.1);
-  align-items: center;
   justify-content: space-between;
   font-family: 'Bruce forever';
   font-size: 14px;
   text-align: center;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
