@@ -14,7 +14,9 @@
   border-radius: 5px;
   border:1px solid #E7E7E7;
   background-image: linear-gradient(to right, #6E31DD 0%, #f647ff 70%);
+  opacity: 0.75;
 }
 .gradient-btn:hover {
   color: #E7E7E7;
+  opacity: 1;
 }
