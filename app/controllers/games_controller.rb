@@ -60,6 +60,17 @@ class GamesController < ApplicationController
     end
   end
 
+  def show_map
+    @game = Game.find(params[:game_id])
+    @markers = [{
+      lat: @game.latitude,
+      lng: @game.longitude,
+      info_window_html: render_to_string(partial: "info_window", locals: {game: @game}),
+      marker_html: render_to_string(partial: "marker")
+    }]
+  end
+
+
   private
 
   def game_params

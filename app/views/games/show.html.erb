@@ -23,12 +23,16 @@
         <div class="d-flex">
           <%= button_to "Edit this game", edit_game_path(@game), class: "gradient-btn" %>
           <%= button_to "Destroy this game", @game, method: :delete, class: "gradient-btn ms-4" %>
-          <p>Hola</p>
+          <%= link_to game_map_path(@game) do %>
+            <p><i class="fa-solid fa-map-location show-map"></i></p>
+          <% end %>
         </div>
       <% else %>
-        <div class="d-flexbox">
-          <%= button_to "Rent this game", new_game_rent_path(@game), class: "gradient-btn" %>
-          <p>Hola</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <%= link_to "Rent this game", new_game_rent_path(@game), class: "gradient-btn" %>
+          <%= link_to game_map_path(@game) do %>
+            <p><i class="fa-solid fa-map-location show-map"></i></p>
+          <% end %>
         </div>
       <% end %>
     </div>

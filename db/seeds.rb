@@ -54,7 +54,7 @@ game = Game.new(
   platform: 'Playstation 1',
   price: 5,
   user_id: ana.id,
-  address: "Tokio, Japan"
+  address: "2 Chome-4-1 Marunouchi, Chiyoda City, Tokyo 100-6390, Japan"
 )
 game.picture.attach(io: file, filename: 'thps2.png', content_type: 'image/png')
 game.save
@@ -76,7 +76,7 @@ game = Game.new(
   platform: 'Dreamcast',
   price: 4,
   user_id: bob.id,
-  address: "Candem Town, London"
+  address: "12 Kentish Town Rd, London NW5 2AB, United Kingdom"
 )
 game.picture.attach(io: file, filename: 'soulcalibur.png', content_type: 'image/png')
 game.save
@@ -120,7 +120,7 @@ game = Game.new(
   platform: 'Nintendo',
   price: 3,
   user_id: jon.id,
-  address: "Lyon, France"
+  address: "7 Rue de Bonnel, 69003 Lyon, France"
 )
 game.picture.attach(io: file, filename: 'super_mario_bros.png', content_type: 'image/png')
 game.save
@@ -143,7 +143,7 @@ game = Game.new(
   platform: 'Game Gear',
   price: 3,
   user_id: jon.id,
-  address: "Svalvard, Norway"
+  address: "Besares 860, Chacras de Coria, Mendoza, Argentina"
 )
 game.picture.attach(io: file, filename: 'mega_man.png', content_type: 'image/png')
 game.save
