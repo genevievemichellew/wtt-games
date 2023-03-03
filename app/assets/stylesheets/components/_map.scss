@@ -1,37 +1,57 @@
-.map-marker {
-  font-size: 20px;
+
+
+.mapboxgl-canvas {
+  border-radius: 24px;
 
 }
 
 .map {
+  border: white;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
-// .marker:before {
-//   content: "";
-//   display: block;
-//   // background-image: url("alien.png");
-//   background-size: 100%;
-//   background-repeat: no-repeat;
-//   height: 30px;
-//   width: 30px;
-//   border-radius: 5px;
-//   color: rgb(136, 25, 158);
-//   transition: 0.5s;
-// }
+.mapboxgl-ctrl-top-right {
+  margin-right: 30px;
+}
 
-// .marker:hover {
-//   color: rgb(198, 2, 237);
-// }
+.mapboxgl-ctrl-bottom-left {
+  margin-left: 30px;
+}
+
+.mapboxgl-ctrl-bottom-right{
+  margin-right: 30px;
+}
+
+
+.marker {
+  // content: "";
+  // display: block;
+  // background-image: url("alien.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-size: 30px;
+  border-radius: 5px;
+  color: #bd69c2;
+  transition: 0.5s;
+}
+
+.marker:hover {
+  color: #ffffff;
+}
 
 .info-window {
   // background-color: rgba(231, 231, 231, 0.7);
   // opacity: 0.5;
-  color: #301661;
+  color: #f647ff;
   // border-bottom-left-radius: 15px;
   // border-top-right-radius: 15px;
   text-decoration: none;
+  transition: ease 0.2s;
+}
+
+.info-window:hover {
+  color: #6E31DD;
 }
 
 .mapboxgl-popup-content {
@@ -41,6 +61,12 @@
   text-align: center;
 }
 
-.mapboxgl-popup-tip {
-  background-color: rgba(231, 231, 231, 0.7);
+// .mapboxgl-popup-tip {
+//   background-color: rgba(231, 231, 231, 0.5);
+// }
+
+.show-map {
+  font-size: 30px;
+  color: white;
+  margin-right: 150px;
 }

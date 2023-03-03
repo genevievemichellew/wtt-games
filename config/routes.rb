@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :games do
     resources :rents, only: %i[new create]
+    get "/map", to: "games#show_map"
   end
 
   resources :rents, only: %i[update]
