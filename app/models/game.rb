@@ -1,9 +1,8 @@
 class Game < ApplicationRecord
-
   PLATFORM = [
-    'Dreamcast', 'Game Boy', 'Game Gear', 'Nintendo (NES)', 'Nintendo 64', 'Playstation',
-    'Playstation 2', 'Playstation 3', 'Playstation 4', 'Playstation 5', 'Sega Genesis (Mega Drive)',
-    'Super Nintendo (SNES)', 'Wii', 'Xbox', 'Xbox 360', 'Xbox One'
+    'Dreamcast', 'Game Boy', 'Game Gear', 'Mega Drive', 'Nintendo', 'Nintendo 64',
+    'Playstation 1', 'Playstation 2', 'Playstation 3', 'Playstation 4', 'Playstation 5',
+    'Super Nintendo', 'Wii', 'Xbox', 'Xbox 360', 'Xbox One'
   ]
 
   belongs_to :user

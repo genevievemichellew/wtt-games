@@ -1,13 +1,35 @@
+// main profile
+
 .container-profile {
   display: flex;
+  justify-content: center;
 }
 
-.user-profile {
-  height: 100vh;
+.profile-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: sticky;
-  top: 90;
-  width: 350;
+  top: 130px;
+  margin: 40px 40px 0 40px;
+  width: 350px;
+  height: 600px;
 
+  background-color: #17122F;
+  opacity: 0.75;
+  transition: 0.5s;
+  border-radius: 5px;
+  padding: 36px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+  h4 {
+    margin-top: 16px;
+  }
+
+  .btn-small {
+    margin: 16px 0;
+    width: 200px;
+  }
 }
 
 .profile-picture {
@@ -15,6 +37,101 @@
   height: 260px;
   border-radius: 50%;
   border: white 1px solid;
-  object-fit: contain;
+  object-fit: cover;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+// games
+
+.profile-games {
+  margin: 40px 40px 0 0;
+  flex-grow: 1;
+}
+
+.profile-my-games, .profile-rented-games, .profile-action-required {
+  margin-bottom: 40px;
+  background-color: #17122F;
+  opacity: 0.75;
+  transition: 0.5s;
+  border-radius: 5px;
+  padding: 36px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  h2 {
+    margin-bottom: 24px;
+  }
+}
+
+.profile-games-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  p {
+    margin-top: 10px;
+    color: rgba(225, 255, 255, 0.7);
+  }
+}
+
+.profile-games-card {
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  width: 150px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  margin-right: 20px;
+  opacity: 0.75;
+  height: 100%;
+}
+
+
+.profile-games-card img:hover {
+  opacity: 1;
+  box-shadow:5px 5px 10px rgb(255, 255, 255);
+}
+
+.profile-games-card:hover {
+  opacity: 1;
+  p {
+    color: white;
+  }
+}
+
+.profile-games-info {
+  position: absolute;
+  bottom: 0;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: #080610;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin-bottom: 20px;
+  p {
+    font-size: 11px;
+    margin: 4px;
+    color: rgba(225, 255, 255, 1);
+  }
+}
+
+
+.profile-rented-games .profile-games-card, .profile-action-required .profile-games-card {
+  display: flex;
+  flex-direction: column;
+  height: 320px;
+  position: relative;
+}
+
+
+.profile-action-required .profile-games-card-btn {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 8px;;
+  width: 150px;
+  opacity: 0.75;
+}
+
+.profile-action-required .profile-games-card-btn:hover {
+  opacity: 1;
 }
