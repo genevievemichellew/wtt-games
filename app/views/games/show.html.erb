@@ -20,8 +20,8 @@
 
     <div class="mb-4">
       <% if @game.user_id == current_user.id %>
-        <div class="d-flex">
-          <%= button_to "Edit this game", edit_game_path(@game), class: "gradient-btn" %>
+        <div class="div-flex d-flex">
+          <%= link_to "Edit this game", edit_game_path(@game), class: "gradient-btn" %>
           <%= button_to "Destroy this game", @game, method: :delete, class: "gradient-btn ms-4" %>
           <%= link_to game_map_path(@game) do %>
             <p><i class="fa-solid fa-map-location show-map"></i></p>

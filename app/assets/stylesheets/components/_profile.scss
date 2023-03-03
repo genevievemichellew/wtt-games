@@ -26,8 +26,11 @@
     margin-top: 16px;
   }
 
-  .btn-small {
+  .btn-small, .btn-small-edit {
     margin: 16px 0;
+    .gradient-btn:hover {
+      color: #E7E7E7;
+    }
   }
 
   .action-text {
