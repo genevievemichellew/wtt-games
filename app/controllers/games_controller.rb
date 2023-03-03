@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: [:index, :map]
+  skip_before_action :authenticate_user!, only: %i[index map]
   # List of all the games available in the app
   def index
     if params[:query].present?
@@ -54,7 +54,7 @@ class GamesController < ApplicationController
       {
         lat: game.latitude,
         lng: game.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {game: game}),
+        info_window_html: render_to_string(partial: "info_window", locals: { game: @game }),
         marker_html: render_to_string(partial: "marker")
       }
     end
@@ -65,16 +65,15 @@ class GamesController < ApplicationController
     @markers = [{
       lat: @game.latitude,
       lng: @game.longitude,
-      info_window_html: render_to_string(partial: "info_window", locals: {game: @game}),
+      info_window_html: render_to_string(partial: "info_window", locals: { game: @game }),
       marker_html: render_to_string(partial: "marker")
     }]
   end
 
-
   private
 
   def game_params
-    params.require(:game).permit(:name, :picture, :platform, :price)
+    params.require(:game).permit(:name, :picture, :description, :platform, :price)
   end
 
   def set_game
