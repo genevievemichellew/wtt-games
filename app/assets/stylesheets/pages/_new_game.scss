@@ -1,9 +1,10 @@
 body.newback {
   background-image: asset-url('desktop.png');
-  height: 100vh;
+  // height: 100vh;
   background-size: cover;
   background-position: center;
   width: 100vw;
+  position: relative;
 }
 .new-game {
   width: 100%;
@@ -11,7 +12,7 @@ body.newback {
   grid-template-columns: 1fr 1fr;
 }
 .new-game-form {
-  padding:50px 0;
+  padding:50px 20px;
   text-align: start;
   label, input, select {
     font-family: 'Bruce Forever';
@@ -38,15 +39,16 @@ body.newback {
   width: 100px;
   height: 50px;
   border-radius:2px solid #E7E7E7;
-  position: absolute;
   border:1px solid #E7E7E7;
   color: #301661;
 }
+
 .first {
   width: 250px;
   height: 112px;
-  right: 460px;
-  bottom: 130px;
+  right: 350px;
+  bottom: 40px;
+  position: absolute;
   padding: 6px;
   border-bottom-left-radius:15px;
   p {
@@ -65,7 +67,8 @@ body.newback {
   width: 236px;
   height: 122px;
   right: 50px;
-  bottom: 315px;
+  bottom: 250px;
+  position: absolute;
   padding: 3px;
   text-align: center;
   border-top-right-radius:15px;
@@ -76,8 +79,4 @@ body.newback {
     font-family:'Bruce Forever';
     border-top-right-radius:15px;
   }
-}
-.form-control, .form-check-input {
-  color: #E7E7E7;
-  background: none;
 }

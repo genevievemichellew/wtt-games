@@ -5,6 +5,13 @@ class Game < ApplicationRecord
     'Super Nintendo', 'Wii', 'Xbox', 'Xbox 360', 'Xbox One'
   ]
 
+  include PgSearch::Model
+  pg_search_scope :search_by_name_platform,
+  against: [ :name, :platform ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
   belongs_to :user
   has_many :rents, dependent: :destroy
   has_one_attached :picture

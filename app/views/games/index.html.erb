@@ -3,11 +3,11 @@
   <div class = 'gameslist'>
     <% @games.each do |game| %>
       <div class = 'gameslist-game'>
-        <p><%= game.platform %></p>
+        <div class = "platform"><%= game.platform %></div>
         <div class = 'game-img'><%= cl_image_tag game.picture.key, height: 300, width: 300, crop: :fill %></div>
         <p><%= game.name %></p>
         <div class = 'game-bottom-part'>
-          <h4>Price: <%= game.price %>€</h4>
+          <h4><%= game.price %>€ / day</h4>
           <%= link_to "Let's play", game, class: 'gradient-btn' %>
         </div>
       </div>
