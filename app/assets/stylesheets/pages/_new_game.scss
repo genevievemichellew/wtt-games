@@ -14,22 +14,45 @@ body.newback {
 .new-game-form {
   padding:50px 20px;
   text-align: start;
-  label, input, select {
+  label, input {
     font-family: 'Bruce Forever';
     background: none;
-    color: #E7E7E7;
+    color: white;
+  }
+  select {
+    font-family: 'Bruce Forever';
+    background-image: transparent;
+    color: none;
   }
 }
+
 .new-forms {
   text-align: start;
-  label, input, select {
+  label, select {
     font-family: 'Bruce Forever';
-    background: transparent;
+    background-image: transparent;
     color: #E7E7E7;
+  }
+  input {
+    font-family: 'Bruce Forever';
+    background-image: transparent;
+    color: #4b4b4b;
   }
 }
 
-
+.new-edit-game-form {
+  text-align: start;
+  label {
+    font-family: 'Bruce Forever';
+    background-image: transparent;
+    color: #E7E7E7;
+  }
+  input, select {
+    font-family: 'Bruce Forever';
+    background-image: transparent;
+    color: #5d5d5d;
+  }
+}
 
 .form-actions .gradient-btn {
   width: 200px;

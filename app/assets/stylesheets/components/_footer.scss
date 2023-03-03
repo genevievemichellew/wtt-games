@@ -1,11 +1,20 @@
 .my-footer {
-  padding:20px 200px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  padding:10px 200px;
+  padding-top: 20px;
   background: rgba(255, 255, 255, 0.1);
   justify-content: space-between;
   font-family: 'Bruce forever';
   font-size: 14px;
   text-align: center;
-  position: absolute;
+  position: bottom;
   bottom: 0;
   width: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
 }
