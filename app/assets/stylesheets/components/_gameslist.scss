@@ -8,9 +8,10 @@
 .gameslist-game {
   display: flex;
   flex-flow: column;
+  position: relative;
   padding: 10px;
   background-color: #17122F;
-  opacity: 0.75;
+  opacity: 0.65;
   transition: 0.5s;
   border-radius: 5px;
   p {
@@ -19,6 +20,8 @@
 }
 .gameslist-game:hover {
   opacity: 1;
+  box-shadow:5px 5px 10px rgb(255, 255, 255);
+
 }
 .game-img {
   margin: 0;
@@ -44,4 +47,18 @@
     border-top-left-radius:15px;
     width: 50%;
   }
+}
+.platform {
+  width: 130px;
+  background: black;
+  color: #E7E7E7;
+  padding: 3px;
+  text-align: center;
+  border-radius: 5px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: absolute;
+  font-weight: bold;
+  top: -10px;
+  left: -8px;
 }

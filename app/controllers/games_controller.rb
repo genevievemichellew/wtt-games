@@ -3,7 +3,12 @@ class GamesController < ApplicationController
 
   # List of all the games available in the app
   def index
-    @games = Game.all
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR platform ILIKE :query"
+      @games = Game.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @games = Game.all
+    end
   end
 
   # Show page of a specific game
@@ -58,7 +63,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :photo, :platform, :price)
+    params.require(:game).permit(:name, :picture, :platform, :price)
   end
 
   def set_game
