@@ -8,17 +8,17 @@
   opacity: 0.8;
   #search-input {
     font-family: 'Bruce Forever';
-    font-size: 14px;
-    width: 78%;
+    font-size: 12px;
+    width: 64%;
     color:#301661;
     background: #E7E7E7;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
+    padding:6px;
   }
   button {
     border: none;
     background: none;
-    transition: 0.5;
     text-decoration: none;
     font-family: "Bruce forever";
     font-size: 14px;
@@ -26,11 +26,12 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 5px 10px;
+    padding: 4px 8px;
     text-transform: uppercase;
     transition: 0.5s;
     background-size: 100% auto;
     color: #E7E7E7;
+    border-right:2px solid #E7E7E7;
   }
   button:hover{
     color:#f647ff;
@@ -42,4 +43,25 @@
 }
 #search-bar:hover{
   opacity: 1;
+}
+.map-icon {
+  width:18%;
+  border: none;
+  background: none;
+  text-decoration: none;
+  font-family: "Bruce forever";
+  font-size: 15px;
+  display: border-box;
+  text-align: center;
+  padding: 6px 7px 3px 7px;
+  margin: auto;
+  background-size: 100% auto;
+  i {
+    color: #301661;
+    width: 20px;
+    transition: 0.5s;
+  }
+  i:hover {
+    color: #E7E7E7;
+  }
 }
