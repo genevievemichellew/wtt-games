@@ -54,7 +54,7 @@ class GamesController < ApplicationController
       {
         lat: game.latitude,
         lng: game.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { game: @game }),
+        info_window_html: render_to_string(partial: "info_window", locals: { game: game }),
         marker_html: render_to_string(partial: "marker")
       }
     end
@@ -73,7 +73,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :picture, :description, :platform, :price)
+    params.require(:game).permit(:name, :picture, :description, :address, :platform, :price)
   end
 
   def set_game
