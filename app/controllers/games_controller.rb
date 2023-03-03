@@ -42,17 +42,28 @@ class GamesController < ApplicationController
     end
   end
 
-
   # Delete a game
   def destroy
     @game.destroy
     redirect_to user_path(current_user), status: :see_other
   end
 
+  def map
+    @games = Game.all
+    @markers = @games.geocoded.map do |game|
+      {
+        lat: game.latitude,
+        lng: game.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {game: game}),
+        marker_html: render_to_string(partial: "marker")
+      }
+    end
+  end
+
   private
 
   def game_params
-    params.require(:game).permit(:name, :photo, :platform, :price)
+    params.require(:game).permit(:name, :picture, :platform, :price)
   end
 
   def set_game
