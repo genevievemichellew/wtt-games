@@ -51,7 +51,7 @@ game.save
 file = URI.open('https://assets-prd.ignimgs.com/2021/12/17/tony-hawk-prp-skater-2-1639763193495.jpg')
 game = Game.new(
   name: "Tony Hawk's Pro Skater 2",
-  platform: 'Playstation 1 (PSONE)',
+  platform: 'Playstation 1',
   price: 5,
   user_id: ana.id,
   address: "Tokio, Japan"
