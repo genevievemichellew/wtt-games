@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+  get "/map", to: "games#map"
+
   resources :users, only: :show
 
   resources :games do

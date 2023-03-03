@@ -42,7 +42,8 @@ game = Game.new(
   name: 'The Legend Of Zelda: Ocarina Of Time',
   platform: 'Nintendo 64',
   price: 5,
-  user_id: ana.id
+  user_id: ana.id,
+  address: "Barcelona, Spain"
 )
 game.picture.attach(io: file, filename: 'zelda_ocarina.png', content_type: 'image/png')
 game.save
@@ -52,7 +53,8 @@ game = Game.new(
   name: "Tony Hawk's Pro Skater 2",
   platform: 'Playstation 1 (PSONE)',
   price: 5,
-  user_id: ana.id
+  user_id: ana.id,
+  address: "Tokio, Japan"
 )
 game.picture.attach(io: file, filename: 'thps2.png', content_type: 'image/png')
 game.save
@@ -62,7 +64,8 @@ game = Game.new(
   name: 'Grand Theft Auto IV',
   platform: 'Playstation 3',
   price: 4,
-  user_id: ana.id
+  user_id: ana.id,
+  address: "Buenos Aires, Argentina"
 )
 game.picture.attach(io: file, filename: 'gta_iv.png', content_type: 'image/png')
 game.save
@@ -72,7 +75,8 @@ game = Game.new(
   name: 'Soulcalibur',
   platform: 'Dreamcast',
   price: 4,
-  user_id: bob.id
+  user_id: bob.id,
+  address: "Candem Town, London"
 )
 game.picture.attach(io: file, filename: 'soulcalibur.png', content_type: 'image/png')
 game.save
@@ -82,7 +86,8 @@ game = Game.new(
   name: 'Super Mario Galaxy',
   platform: 'Wii',
   price: 5,
-  user_id: bob.id
+  user_id: bob.id,
+  address: "South Kensington, London"
 )
 game.picture.attach(io: file, filename: 'super_mario_galaxy.png', content_type: 'image/png')
 game.save
@@ -92,7 +97,8 @@ game = Game.new(
   name: 'Red Dead Redemption 2',
   platform: 'Xbox One',
   price: 5,
-  user_id: bob.id
+  user_id: bob.id,
+  address: "Shoderitch, London"
 )
 game.picture.attach(io: file, filename: 'read_dead_redemption.png', content_type: 'image/png')
 game.save
@@ -102,7 +108,8 @@ game = Game.new(
   name: 'Perfect Dark',
   platform: 'Nintendo 64',
   price: 3,
-  user_id: jon.id
+  user_id: jon.id,
+  address: "Paris, France"
 )
 game.picture.attach(io: file, filename: 'perfect_dark.png', content_type: 'image/png')
 game.save
@@ -112,7 +119,8 @@ game = Game.new(
   name: 'Super Mario Bros',
   platform: 'Nintendo',
   price: 3,
-  user_id: jon.id
+  user_id: jon.id,
+  address: "Lyon, France"
 )
 game.picture.attach(io: file, filename: 'super_mario_bros.png', content_type: 'image/png')
 game.save
@@ -122,7 +130,8 @@ game = Game.new(
   name: 'The Last Of Us',
   platform: 'Playstation 1 (PSONE)',
   price: 5,
-  user_id: jon.id
+  user_id: jon.id,
+  address: "Sevilla, Spain"
 )
 
 game.picture.attach(io: file, filename: 'the_last_of_us.png', content_type: 'image/png')
@@ -133,7 +142,8 @@ game = Game.new(
   name: 'Mega Man',
   platform: 'Game Gear',
   price: 3,
-  user_id: jon.id
+  user_id: jon.id,
+  address: "Svalvard, Norway"
 )
 game.picture.attach(io: file, filename: 'mega_man.png', content_type: 'image/png')
 game.save

@@ -1,0 +1,46 @@
+.map-marker {
+  font-size: 20px;
+
+}
+
+.map {
+  justify-content: center;
+  margin-top: 50px;
+}
+
+// .marker:before {
+//   content: "";
+//   display: block;
+//   // background-image: url("alien.png");
+//   background-size: 100%;
+//   background-repeat: no-repeat;
+//   height: 30px;
+//   width: 30px;
+//   border-radius: 5px;
+//   color: rgb(136, 25, 158);
+//   transition: 0.5s;
+// }
+
+// .marker:hover {
+//   color: rgb(198, 2, 237);
+// }
+
+.info-window {
+  // background-color: rgba(231, 231, 231, 0.7);
+  // opacity: 0.5;
+  color: #301661;
+  // border-bottom-left-radius: 15px;
+  // border-top-right-radius: 15px;
+  text-decoration: none;
+}
+
+.mapboxgl-popup-content {
+  background-color: rgba(231, 231, 231, 0.7);
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  text-align: center;
+}
+
+.mapboxgl-popup-tip {
+  background-color: rgba(231, 231, 231, 0.7);
+}
