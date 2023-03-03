@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   before_action :set_game, only: %i[show edit update destroy]
-
+  skip_before_action :authenticate_user!, only: [:index, :map]
   # List of all the games available in the app
   def index
     if params[:query].present?
