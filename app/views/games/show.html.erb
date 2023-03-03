@@ -7,10 +7,10 @@
 
     <div class="card-info">
       <div class="card-game-info-img">
+        <p class="platform"><%= @game.platform %></p>
         <%= cl_image_tag @game.picture.key, height: 300, width: 300, crop: :fill%>
       </div>
       <div class="card-info-text">
-        <p><%= @game.platform %></p>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates reprehenderit quisquam cum facilis dolorem ipsum nesciunt ab. Veniam repudiandae facilis voluptate tenetur. Laborum, iure maiores consequatur corrupti accusamus ratione soluta.</p>
       </div>
     </div>
@@ -21,8 +21,11 @@
     <div class="mb-4">
       <% if @game.user_id == current_user.id %>
         <div class="d-flex">
-          <%= link_to "Edit this game", edit_game_path(@game), class: "gradient-btn" %>
+          <%= button_to "Edit this game", edit_game_path(@game), class: "gradient-btn" %>
           <%= button_to "Destroy this game", @game, method: :delete, class: "gradient-btn ms-4" %>
+          <%= link_to game_map_path(@game) do %>
+            <p><i class="fa-solid fa-map-location show-map"></i></p>
+          <% end %>
         </div>
       <% else %>
         <div class="d-flex justify-content-between align-items-center">

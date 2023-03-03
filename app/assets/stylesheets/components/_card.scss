@@ -25,14 +25,33 @@
   flex-wrap: wrap;
   margin: 0px 0px 36px 0px;
   // justify-content: space-between;
+  position: relative;
 }
 
-.card-info-img {
+.card-game-info-img {
   margin: 0;
   object-fit: cover;
   border-radius: 5px;
   border: 1px solid #E7E7E7;
+  margin-right: 24px;
+  margin-bottom: 24px;
   }
+
+.card-info .platform {
+  width: 100px;
+  background: black;
+  color: #E7E7E7;
+  padding: 3px;
+  text-align: center;
+  border-radius: 5px;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+  position: absolute;
+  font-weight: bold;
+  top: -20px;
+  left: -8px;
+  font-size: 14px;
+}
 
 .card-info-text {
   height: 100%;
@@ -43,4 +62,9 @@
   margin-bottom: 36px;
   font-family: "Bruce Forever";
   font-size: 16px;
+}
+
+.carf-flexbox {
+  display: flex;
+
 }

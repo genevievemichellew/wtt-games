@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @rents = Rent.all.where(user: current_user)
     @received_rents = current_user.received_rents
+    @pending_rents = current_user.received_rents.where(status: "pending")
   end
 
   # Edit a profile
