@@ -7,7 +7,6 @@ require "open-uri"
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-require "open-uri"
 
 puts 'Cleaning Database'
 Game.destroy_all
@@ -51,7 +50,7 @@ game.save
 file = URI.open('https://assets-prd.ignimgs.com/2021/12/17/tony-hawk-prp-skater-2-1639763193495.jpg')
 game = Game.new(
   name: "Tony Hawk's Pro Skater 2",
-  platform: 'Playstation',
+  platform: 'Playstation 1 (PSONE)',
   price: 5,
   user_id: ana.id
 )
@@ -121,7 +120,7 @@ game.save
 file = URI.open('https://assets-prd.ignimgs.com/2021/12/07/tlou-1638842419547.jpg')
 game = Game.new(
   name: 'The Last Of Us',
-  platform: 'Playstation',
+  platform: 'Playstation 1 (PSONE)',
   price: 5,
   user_id: jon.id
 )

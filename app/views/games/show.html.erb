@@ -6,7 +6,7 @@
     <h1><%= @game.name %></h1>
 
     <div class="card-info">
-      <div class="card-info-img">
+      <div class="card-game-info-img">
         <%= cl_image_tag @game.picture.key, height: 300, width: 300, crop: :fill%>
       </div>
       <div class="card-info-text">
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="card-price">
-      <p>Price:<%= @game.price %>€</p>
+      <p>Rent price: <%= @game.price %>€ / day</p>
     </div>
 
     <div class="mb-4">
@@ -26,7 +26,7 @@
         </div>
       <% else %>
         <div class="d-flex">
-          <%= link_to "Rent this game", edit_game_path(@game), class: "gradient-btn" %>
+          <%= link_to "Rent this game", new_game_rent_path(@game), class: "gradient-btn" %>
         </div>
       <% end %>
     </div>
