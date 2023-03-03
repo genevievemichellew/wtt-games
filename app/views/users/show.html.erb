@@ -1,9 +1,12 @@
 <div class="container">
   <div class="container-profile">
     <%# flex item 1 %>
-    <div class="profile-user">
-      <%# <%= cl_image_tag user.picture.key, height: 150, width: 150, crop: :fill %>
-      <img class="profile-picture" src="https://media.gq-magazine.co.uk/photos/62ac38f82da9f5f89888eba9/4:3/w_888,h_666,c_limit/jon-snow-series-1200.jpeg" alt="">
+    <div class=“profile-user”>
+      <% if @user.photo.key %>
+        <%= cl_image_tag @user.photo.key, height: 150, width: 150, crop: :fill %>
+      <% else %>
+        <img class=“profile-picture” src=“https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png” alt=“”>
+      <% end %>
       <h4><%= @user.first_name %> <%= @user.last_name %></h4>
       <p>E-mail: <%= @user.email %></p>
         <div class="btn-small">

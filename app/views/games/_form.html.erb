@@ -3,15 +3,12 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="row justify-content-center pb-4">
-    <div class="new-forms col-12 col-md-6 col-lg-4">
+    <div class="new-games-form">
       <%= f.input :name %>
-      <p class="text-center"><%= f.select :platform, label: Game::PLATFORM %></p>
-      <p></p>
+      <%= f.input :platform, collection: Game::PLATFORM %>
       <%= f.input :picture, as: :file %>
       <%= f.input :price %>
     </div>
-  </div>
 
   <div class="form-actions row justify-content-center py-2">
     <%= f.button :submit , class: 'gradient-btn'%>

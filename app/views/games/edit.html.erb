@@ -1,14 +1,13 @@
-<h2 class="text-center">Editing game</h2>
+<h2 class="text-center pt-4">Editing game</h2>
 
 <%= simple_form_for(@game) do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="row justify-content-center pb-4">
-    <div class="new-forms col-12 col-md-6 col-lg-4">
+    <div class="new-edit-game-form col-12 col-md-6 col-lg-4">
       <%= f.input :name %>
-      <p class="text-center"><%= f.select :platform, label: Game::PLATFORM %></p>
-      <p></p>
+      <%= f.input :platform, collection: Game::PLATFORM %>
       <%= f.input :picture, as: :file %>
       <%= f.input :price %>
     </div>
@@ -21,7 +20,7 @@
 
 <br>
 
-<div class="text-center py-2">
-  <%= link_to "Show this game", @game %> |
-  <%= link_to "Back to games", games_path %>
+<div class="row justify-content-center py-2">
+  <%= link_to "Show this game", @game, class: "btn btn-link link-light" %>
+  <%= link_to "Back to games", games_path, class: "btn btn-link link-light" %>
 </div>

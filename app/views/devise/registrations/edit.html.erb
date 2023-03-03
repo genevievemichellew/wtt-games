@@ -1,4 +1,4 @@
-<h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
+<h2 class="text-center pt-4">Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -34,7 +34,7 @@
 <% end %>
 
 <div class="text-center pb-4">
-  <%= link_to "Back", user_path(current_user) %>
+  <%= link_to "Back", user_path(current_user), class: "btn btn-link link-light" %>
 </div>
 
 <!--<h3 class="text-center">Cancel my account</h3>-->
